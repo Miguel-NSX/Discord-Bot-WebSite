@@ -72,8 +72,25 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
     </style>
+    <link rel="stylesheet" href="/css/menu.css">
 </head>
 <body>
+    <button class="menu-button" onclick="toggleMenu()">Menu</button>
+    <div class="menu">
+        <div class="menu-content">
+            <ul class="menu-items">
+                <li><a href="/">Início</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="/contato">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+    </script>
     <h1>Jully</h1>
     <p class="tagline">A fazenda dos seus sonhos começa aqui!</p>
     <% if (user) { %>
