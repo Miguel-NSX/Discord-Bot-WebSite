@@ -20,9 +20,16 @@
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
+            font-size: 3.5em;
+            margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
         .discord-btn {
@@ -67,7 +74,8 @@
     </style>
 </head>
 <body>
-    <h1>Bem-vindo!</h1>
+    <h1>Jully</h1>
+    <p class="tagline">A fazenda dos seus sonhos começa aqui!</p>
     <% if (user) { %>
         <div class="user-info">
             <p>Olá, <%= user.username %>!</p>
