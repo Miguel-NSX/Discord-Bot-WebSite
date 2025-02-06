@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login com Discord</title>
+</head>
+<body>
+    <h1>Bem-vindo!</h1>
+    <% if (user) { %>
+        <p>Olá, <%= user.username %>!</p>
+        <a href="/dashboard">Ir para Dashboard</a>
+        <a href="/auth/logout">Sair</a>
+    <% } else { %>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1325945841495707719&redirect_uri=https://6f09d45e-0105-4883-ae84-b0c259deb34a-00-2qsyd0b3gvwla.spock.replit.dev/auth/discord/callback&response_type=code&scope=identify+email+guilds+connections+guilds.members.read">Login com Discord</a>
+    <% } %>
+</body>
+    </html>
+        
