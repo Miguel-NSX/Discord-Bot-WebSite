@@ -75,22 +75,14 @@
     <link rel="stylesheet" href="/css/menu.css">
 </head>
 <body>
-    <button class="menu-button" onclick="toggleMenu()">Menu</button>
-    <div class="menu">
-        <div class="menu-content">
-            <ul class="menu-items">
-                <li><a href="/">Início</a></li>
-                <li><a href="/sobre">Sobre</a></li>
-                <li><a href="/contato">Contato</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            document.querySelector('.menu').classList.toggle('active');
-        }
-    </script>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">Jully</a>
+        <ul class="nav-items">
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="/contato">Contato</a></li>
+        </ul>
+    </nav>
     <h1>Jully</h1>
     <p class="tagline">A fazenda dos seus sonhos começa aqui!</p>
     <% if (user) { %>
