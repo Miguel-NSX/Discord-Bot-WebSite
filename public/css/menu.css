@@ -84,7 +84,6 @@
     }
 
     .nav-items {
-        display: none;
         position: fixed;
         top: 64px;
         right: -100%;
@@ -93,12 +92,14 @@
         background: rgba(26, 26, 26, 0.98);
         flex-direction: column;
         padding: 30px;
-        transition: 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        transform: translateX(100%);
     }
 
     .nav-items.active {
+        transform: translateX(0);
         right: 0;
-        display: flex;
     }
 
     .nav-items li {
