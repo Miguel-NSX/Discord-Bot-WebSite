@@ -77,12 +77,24 @@
 <body>
     <nav class="navbar">
         <a href="/" class="navbar-brand">Jully</a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-items">
             <li><a href="/">Início</a></li>
             <li><a href="/sobre">Sobre</a></li>
             <li><a href="/contato">Contato</a></li>
         </ul>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-items').classList.toggle('active');
+        }
+    </script>
     <h1>Jully</h1>
     <p class="tagline">A fazenda dos seus sonhos começa aqui!</p>
     <% if (user) { %>
