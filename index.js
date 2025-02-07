@@ -26,6 +26,15 @@ app.use(passport.session());
 
 app.use(discordAuth);
 
+// Middleware de autenticação
+const checkAuth = (req, res, next) => {
+  res.locals.isAuthenticated = !!req.session.user;
+  next();
+};
+
+// Aplicar middleware em todas as rotas
+app.use(checkAuth);
+
 // Rota da página inicial
 app.get("/", (req, res) => {
   res.render("home", { user: req.session.user });

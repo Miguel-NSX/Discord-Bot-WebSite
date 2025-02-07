@@ -85,14 +85,14 @@
 
     .nav-items {
         position: fixed;
-        top: 64px;
+        top: 0;
         right: -100%;
-        height: calc(100vh - 64px);
+        height: 100vh;
         width: 70%;
         background: rgba(26, 26, 26, 0.98);
         flex-direction: column;
-        padding: 30px;
-        transition: transform 1.3s ease-in-out;
+        padding: 80px 30px 30px;
+        transition: transform 0.5s ease-in-out;
         display: flex;
         transform: translateX(100%);
     }
