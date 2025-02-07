@@ -8,7 +8,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
+    z-index: 1002;
+}
+
+.user-profile-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.login-button {
+    background: #7289da;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-right: 20px;
+}
+
+.login-button:hover {
+    background: #5f73bc;
 }
 
 .navbar-brand {
