@@ -8,8 +8,7 @@ const discordAuth = require('./discordAuth.js');
 
 // Configuração do view engine
 app.set("view engine", "ejs");
-app.set("views", "./views"); // Define o diretório das views (caso não esteja no padrão)
-
+app.set("views", "./views"); // Define o diretório das views (caso não esteja no padrão).
 app.use(express.static("public")); // Para servir arquivos estáticos da pasta 'public'
 
 // Middleware de sessão
