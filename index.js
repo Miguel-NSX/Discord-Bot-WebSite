@@ -2,6 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
 const ejs = require("ejs");
+const { Client } = require("discord.js");
 const app = express();
 const discordAuth = require('./discordAuth.js');
 
@@ -20,20 +21,34 @@ app.use(
   })
 );
 
+const client = new Client({
+  intents: 32767,
+})
+
+client.login(process.env.TOKEN)
+
+client.on('ready', () => {
+  console.log(`🤖 - ${client.user.tag} está online!`)
+})
+
 // Middleware do passport
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(discordAuth);
 
-// Middleware de autenticação
-const checkAuth = (req, res, next) => {
-  res.locals.isAuthenticated = !!req.session.user;
-  next();
-};
+const logged = (req, res, next) => {
+  if (req.session.user) {
+    next();
+  } else {
+    res.redirect("/auth/discord");
+  }
+}
 
-// Aplicar middleware em todas as rotas
-app.use(checkAuth);
+app.get("/auth/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/")
+});
 
 // Rota da página inicial
 app.get("/", (req, res) => {
@@ -41,7 +56,7 @@ app.get("/", (req, res) => {
 });
 
 // Rota do dashboard
-app.get("/dashboard", (req, res) => {
+app.get("/dashboard", logged, (req, res) => {
   res.render("dashboard", { user: req.session.user });
 });
 

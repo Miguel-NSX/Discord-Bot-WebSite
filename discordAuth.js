@@ -43,7 +43,7 @@ router.get('/auth/discord/callback', async (req, res) => {
         console.log(`\n[💻 log user WebSite ]
 Informações do usuário:\n${username}\n${id}\n${email}\n`);
 
-        res.redirect('/');
+        res.redirect('/dashboard');
     } catch (error) {
         console.error('Erro ao autenticar usuário:', error);
         res.status(500).send('Erro ao autenticar usuário.');
