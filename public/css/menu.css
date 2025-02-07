@@ -47,7 +47,7 @@
     background: none;
     border: none;
     z-index: 1002;
-    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .hamburger span {
@@ -86,20 +86,21 @@
     .nav-items {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         height: 100vh;
         width: 70%;
         background: rgba(26, 26, 26, 0.98);
         flex-direction: column;
         padding: 80px 30px 30px;
-        transition: transform 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
         display: flex;
         transform: translateX(100%);
+        opacity: 0;
     }
 
     .nav-items.active {
         transform: translateX(0);
-        right: 0;
+        opacity: 1;
     }
 
     .nav-items li {
