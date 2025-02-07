@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Jully</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">Jully</a>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-items">
+            <li><a href="/">Início</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/auth/logout">Sair</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="user-profile">
+            <img src="<%= user.avatar %>" alt="Avatar" class="avatar">
+            <h2>Bem-vindo, <%= user.username %>!</h2>
+        </div>
+        
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Seus Dados</h3>
+                <p>Email: <%= user.email %></p>
+                <p>ID: <%= user.id %></p>
+            </div>
+            <div class="card">
+                <h3>Ações Rápidas</h3>
+                <button class="action-btn">Gerenciar Perfil</button>
+                <button class="action-btn">Configurações</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('.nav-items').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -31,9 +31,11 @@ app.get("/", (req, res) => {
   res.render("home", { user: req.session.user });
 });
 
-// Rota do dashboard
-app.get("/dashboard", (req, res) => {
-  res.render("dashboard", { user: req.user });
+const requireAuth = require('./middleware/auth');
+
+// Rota do dashboard (protegida)
+app.get("/dashboard", requireAuth, (req, res) => {
+  res.render("dashboard", { user: req.session.user });
 });
 
 // Inicializando o servidor
