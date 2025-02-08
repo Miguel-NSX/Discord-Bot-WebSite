@@ -37,7 +37,7 @@ h1 {
 
 .tagline {
     font-size: 1.6em;
-    max-width: 80%;
+    max-width: 100%;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1s ease-out;
 }
@@ -144,8 +144,8 @@ h1 {
     }
 
     .tagline {
-        font-size: 1.2em;
-        padding: 0 20px;
+        font-size: 3.2em;
+        padding: 0px;
     }
 
     .nav-links {

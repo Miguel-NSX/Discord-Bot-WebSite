@@ -10,43 +10,49 @@
     <script src="/javascript/menu.js"></script>
 </head>
 <body>
-    <body>
-    <nav class="navbar">
-        <a href="/" class="navbar-brand">Jully</a>
-        <div style="display: flex; align-items: center;">
-            <% if (user) { %>
-                <a href="/dashboard" class="user-profile-nav"> <img src="<%= user.avatar %>" alt="Avatar" class="user-avatar">
-            <span><%= user.username %></span>
-                </a>
-            <% } else { %>
-                <a href="/auth/discord" class="login-button">Login com Discord</a>
-            <% } %>
-            <button class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <ul class="nav-items">
-<li><a href="/">Página inicial</a></li>
-<li><a href="/dashboard">Dashboard</a></li>
-<li><a href="/commands">Comando</a></li>
-    </ul>
-
-    <h1>Jully</h1>
-    <p class="tagline">A fazenda dos seus sonhos começa aqui!</p>
-    <% if (user) { %>
-        <div class="user-info">
-            <p>Olá, <%= user.username %>!</p>
-            <div class="nav-links">
-                <a href="/dashboard">Ir para Dashboard</a>
-                <a href="/auth/logout">Sair</a>
+    <div class="container">
+        <nav class="navbar">
+            <a href="/" class="navbar-brand">Jully</a>
+            <div style="display: flex; align-items: center;">
+                <% if (user) { %>
+                    <a href="/dashboard" class="user-profile-nav">
+                        <img src="<%= user.avatar %>" alt="Avatar" class="user-avatar">
+                        <span><%= user.username %></span>
+                    </a>
+                <% } else { %>
+                    <a href="/auth/discord" class="login-button">Login com Discord</a>
+                <% } %>
+                <button class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+        </nav>
+
+        <ul class="nav-items">
+            <li><a href="/">Página inicial</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/commands">Comandos</a></li>
+        </ul>
+
+        <div class="content">
+            <h1>Jully</h1>
+            <p class="tagline">A fazenda dos seus sonhos começa aqui!</p>
+
+            <% if (user) { %>
+                <div class="user-info">
+                    <p>Olá, <%= user.username %>!</p>
+                    <div class="nav-links">
+                        <a href="/dashboard">Ir para Dashboard</a>
+                        <a href="/auth/logout">Sair</a>
+                    </div>
+                </div>
+            <% } else { %>
+                <a href="/auth/discord" class="discord-btn">Login com Discord</a>
+            <% } %>
         </div>
-    <% } else { %>
-        <a href="/auth/discord" class="discord-btn">Login com Discord</a>
-    <% } %>
-    </body>
-    </html>
+    </div>
+</body>
+            </html>
+                
