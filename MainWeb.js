@@ -51,7 +51,7 @@ app.get("/auth/logout", (req, res) => {
 
 // Rota da página inicial
 app.get("/", (req, res) => {
-  res.render("home", { user: req.session.user });
+  res.render("home", { user: req.session.user, client: client});
 });
 
 // Rota do dashboard
