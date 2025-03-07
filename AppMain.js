@@ -4,7 +4,7 @@ const passport = require("passport");
 const ejs = require("ejs");
 const { Client } = require("discord.js");
 const app = express();
-const discordAuth = require('./discordAuth.js');
+const discordAuth = require('./login.js');
 
 // Configuração do view engine
 app.set("view engine", "ejs");
@@ -14,7 +14,7 @@ app.use(express.static("public")); // Para servir arquivos estáticos da pasta '
 // Middleware de sessão
 app.use(
   session({
-    secret: "seuSegredoAqui",
+    secret: process.env.SESSION_KEY,
     resave: false,
     saveUninitialized: false,
   })

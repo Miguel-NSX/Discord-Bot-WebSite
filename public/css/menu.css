@@ -76,7 +76,7 @@
     margin: 15px 0;
     transform: translateX(30px);
     opacity: 0;
-    transition: transform 1.5s ease-out, opacity 1.5s ease-in-out;
+    transition: transform 2.5s ease-out, opacity 2.5s ease-in-out;
     padding-left: 0;
 }
 

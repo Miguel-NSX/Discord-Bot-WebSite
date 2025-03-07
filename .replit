@@ -1,4 +1,4 @@
-entrypoint = "MainWeb.js"
+entrypoint = "AppMain.js"
 modules = ["nodejs-20"]
 hidden = [".config", "package-lock.json"]
 
